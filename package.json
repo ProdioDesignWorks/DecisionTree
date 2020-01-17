@@ -1,7 +1,7 @@
 {
-  "name": "DecisionTree",
-  "version": "1.0.0",
-  "description": "Decision Tree to decide which activities a smoker has to go through w.r.t to his past history & smoking habits",
+  "name": "js-decisiontree",
+  "version": "1.0.1",
+  "description": "NodeJS Implementation of Decision Tree using ID3 Algorithm.",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "devBuild": ". scripts/dev.build.sh",
     "lint": "eslint src",
     "lintfix": "eslint --fix src",
-    "prepublishOnly": "npm run lint && npm run build"
+    "prepublishOnly": "npm run build"
   },
   "author": "Pawan Wagh",
   "license": "MIT",

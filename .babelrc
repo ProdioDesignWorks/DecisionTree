@@ -4,7 +4,10 @@
       "presets": ["es2015"]
     },
     "production": {
-      "presets": ["es2015", "minify"]
+      "presets": [
+      	"es2015", 
+      	["minify", { "builtIns": false }]
+      ]
     }
   }
 }
