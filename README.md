@@ -22,9 +22,9 @@ $ npm install js-decisiontree --save
 ### How to use
 ```js
 const { Tree } = require('js-decisiontree');
-const DecisionTree = new Tree();
 const trainingDataSet = [];
 const config = {};
+const DecisionTree = new Tree(config);
 DecisionTree.train(trainingDataSet, config);
 DecisionTree.predict(sample);
 ```
