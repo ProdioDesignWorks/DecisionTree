@@ -14,7 +14,7 @@ const TreeProto = {
     train(data = [], config = {}) {
         this.debug && console.log("train method called");
         const { className, features, fixMissingFeatures, persist, learn, debug } = config;
-        this.className = isDefined(className) && isNull(className) ? className : this.className;
+        this.className = isDefined(className) && !isNull(className) ? className : this.className;
         this.features = isDefined(features) && isArray(features) && features.length ? features : this.features;
         this.persist = isDefined(persist) ? persist : this.persist;
         this.learn = isDefined(learn) ? learn : this.learn;
@@ -98,16 +98,11 @@ const TreeProto = {
     }
 };
 
-function DecisionTree({
-    data = [],
-    className = '', 
-    features = [], 
-    fixMissingFeatures = false, 
-    persist = false, 
-    load = false,
-    learn = false,
-    debug = false
-} = {}) {
+function DecisionTree(config = {}) {
+    const { 
+        data = [], className = '', features = [], fixMissingFeatures = false, 
+        persist = false, load = false, learn = false, debug = false
+    } = config;
     debug && console.log("Data provided while initialization, so training the model right now");
     const tree = new Tree(data, className, features);
     TreeProto.tree = Object.create(tree);
@@ -118,9 +113,9 @@ function DecisionTree({
     TreeProto.persist = persist;
     TreeProto.load = load;
 
-    if (isArray(data) && data.length) {
-        TreeProto.train(data);
-    }
+    // if (isArray(data) && data.length) {
+    //     TreeProto.train(data);
+    // }
 
     if (load) {
         debug && console.log("Load setting is set: %s", load);
