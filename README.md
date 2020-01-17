@@ -33,7 +33,7 @@ DecisionTree.predict(sample);
 | Setting | Description |
 | ------ | ------ |
 | className | Class name or property which will be used as output of decision tree|
-| features | Features or data points to be used for while decision tree |
+| features | Features or data points to be used for training decision tree |
 | persist | If set, persists the trained model on local disk |
 | learn | If set, trains the model with data used for prediction |
 | fixMissingFeatures | If set, takes careof of missing features in training data |
